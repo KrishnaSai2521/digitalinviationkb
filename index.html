@@ -3,51 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Invitation Sample</title>
+    <title>Marriage Invitation - April 12th</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: #f7f7f7;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #f7cac9 0%, #92a8d1 100%);
             margin: 0;
             padding: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
         .container {
-            max-width: 600px;
-            margin: 40px auto;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            padding: 32px;
+            max-width: 650px;
+            margin: 60px auto;
+            background: rgba(255,255,255,0.95);
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+            padding: 40px 32px;
             text-align: center;
+            position: relative;
         }
         h1 {
-            color: #4a90e2;
+            color: #b56969;
+            font-size: 2.6rem;
+            margin-bottom: 16px;
+            font-family: 'Dancing Script', cursive, Arial;
         }
-        p {
+        .subtitle {
+            color: #4a90e2;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+        }
+        .details {
             color: #333;
+            font-size: 1.1rem;
+            margin-bottom: 32px;
         }
         .button {
             display: inline-block;
             margin-top: 24px;
-            padding: 12px 32px;
-            background: #4a90e2;
+            padding: 14px 36px;
+            background: linear-gradient(90deg, #b56969 0%, #4a90e2 100%);
             color: #fff;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             text-decoration: none;
-            font-size: 16px;
-            transition: background 0.2s;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: background 0.2s, transform 0.2s;
         }
         .button:hover {
-            background: #357ab8;
+            background: linear-gradient(90deg, #4a90e2 0%, #b56969 100%);
+            transform: scale(1.05);
+        }
+        .animated-heart {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px auto;
+            display: block;
+        }
+        .flower {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            top: -30px;
+            left: 20px;
+            animation: float 4s infinite ease-in-out;
+        }
+        .flower2 {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            bottom: -30px;
+            right: 20px;
+            animation: float 5s infinite ease-in-out reverse;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
         }
     </style>
+    <!-- Google Fonts for script style -->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>You're Invited!</h1>
-        <p>Join us for a special event. This is a sample digital invitation page.</p>
-        <a href="#" class="button">RSVP Now</a>
+        <!-- Animated Heart SVG -->
+        <svg class="animated-heart" viewBox="0 0 80 80">
+            <g>
+                <path d="M40 70 Q10 40 40 20 Q70 40 40 70" fill="#b56969">
+                    <animate attributeName="fill" values="#b56969;#f7cac9;#b56969" dur="2s" repeatCount="indefinite" />
+                </path>
+            </g>
+        </svg>
+        <!-- Decorative Flowers -->
+        <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/flowers-1298880_1280.png" alt="Flower" class="flower" />
+        <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/flowers-1298880_1280.png" alt="Flower" class="flower2" />
+        <h1>Wedding Invitation</h1>
+        <div class="subtitle">We joyfully invite you to our marriage</div>
+        <div class="details">
+            <strong>Date:</strong> April 12th, 2026<br>
+            <strong>Time:</strong> 8:05 PM<br>
+            <strong>Venue:</strong> <span id="venue">[Add your venue here]</span><br>
+            <br>
+            <em>Join us for a night of love, laughter, and celebration!</em>
+        </div>
+        <a href="#" class="button" onclick="rsvpPopup()">RSVP Now</a>
     </div>
+    <!-- Interactive RSVP Popup -->
+    <script>
+        function rsvpPopup() {
+            const name = prompt('Please enter your name to RSVP:');
+            if (name) {
+                alert('Thank you, ' + name + '! Your RSVP has been received.');
+            }
+        }
+    </script>
 </body>
 </html>
