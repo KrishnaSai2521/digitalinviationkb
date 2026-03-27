@@ -1,122 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Invitation | Bhargavi & Krishna</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
-    <style>
-        :root { --gold: #d48e3d; --transition: 1.5s cubic-bezier(0.4, 0, 0.2, 1); }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation | Bhargavi & Krishna</title>
 
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: 'Playfair Display', serif; background: #a3d2f0; }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 
-        /* 1. The "Entry" Overlay */
-        #entry-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: white; z-index: 100; display: flex;
-            flex-direction: column; justify-content: center; align-items: center;
-            transition: opacity 1s ease-out;
-        }
-        .open-btn {
-            padding: 15px 40px; border: 2px solid var(--gold);
-            background: none; color: var(--gold); font-size: 1.2rem;
-            cursor: pointer; letter-spacing: 2px; border-radius: 50px;
-        }
+<style>
+:root {
+    --gold: #d48e3d;
+    --transition: 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-        /* 2. Background & Parallax */
-        #fixed-background {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
-            background-image: url('temple.jpg'); background-size: cover;
-            background-position: center 15%; transform: scale(1.4);
-            transition: background-position var(--transition), transform var(--transition);
-        }
-        #fixed-background.revealed { background-position: center center; transform: scale(1); }
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Playfair Display', serif;
+    background: #a3d2f0;
+}
 
-        /* 3. Floating Lamps */
-        .lamp {
-            position: fixed; z-index: 3; font-size: 2.5rem;
-            filter: drop-shadow(0 0 10px gold); pointer-events: none;
-            animation: float 4s ease-in-out infinite;
-        }
-        .l1 { top: 10%; left: 5%; } .l2 { top: 20%; right: 8%; animation-delay: 1s; }
-        .l3 { bottom: 15%; left: 10%; animation-delay: 2s; }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+/* 1. Entry Overlay */
+#entry-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 
-        /* 4. Scrolling Content */
-        .scroller { height: 100vh; overflow-y: scroll; scroll-snap-type: y mandatory; position: relative; z-index: 2; }
-        section { height: 100vh; width: 100%; scroll-snap-align: start; display: flex; justify-content: center; align-items: center; text-align: center; }
-        
-        .intro h1 { font-size: 3.5rem; color: #2c3e50; margin: 0; }
-        .intro p { font-size: 1.5rem; color: var(--gold); font-style: italic; }
-        
-        .card { background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); color: white; }
-        .rsvp { display: inline-block; margin-top: 20px; padding: 12px 30px; background: var(--gold); color: white; text-decoration: none; border-radius: 50px; }
-    </style>
+    background: white;
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transition: opacity 1s ease-out;
+}
+
+.open-btn {
+    padding: 15px 40px;
+    border: 2px solid var(--gold);
+    background: none;
+    color: var(--gold);
+    font-size: 1.2rem;
+    cursor: pointer;
+    letter-spacing: 2px;
+    border-radius: 50px;
+}
+
+/* 2. Background FIXED */
+#fixed-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    background-image: url('temple.jpg');
+    background-size: cover;
+
+    /* KEY FIX: temple visible initially */
+    background-position: center 80%;
+
+    /* slight zoom start */
+    transform: scale(1.2);
+
+    transition: transform var(--transition), background-position var(--transition);
+}
+
+/* Reveal animation */
+#fixed-background.revealed {
+    background-position: center 40%;
+    transform: scale(1);
+}
+
+/* 3. Lamps */
+.lamp {
+    position: fixed;
+    z-index: 3;
+    font-size: 2.5rem;
+    filter: drop-shadow(0 0 10px gold);
+    pointer-events: none;
+    animation: float 4s ease-in-out infinite;
+}
+
+.l1 { top: 10%; left: 5%; }
+.l2 { top: 20%; right: 8%; animation-delay: 1s; }
+.l3 { bottom: 15%; left: 10%; animation-delay: 2s; }
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* 4. Scroller */
+.scroller {
+    height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    position: relative;
+    z-index: 2;
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: start;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Intro */
+.intro h1 {
+    font-size: 3.5rem;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.intro p {
+    font-size: 1.5rem;
+    color: var(--gold);
+    font-style: italic;
+}
+
+/* Card */
+.card {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+}
+
+.rsvp {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: var(--gold);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+}
+</style>
 </head>
+
 <body>
 
-    <div id="entry-overlay">
-        <h2 style="color: #2c3e50;">You are invited</h2>
-        <button class="open-btn" onclick="startExperience()">OPEN INVITATION</button>
-    </div>
+<!-- Entry Overlay -->
+<div id="entry-overlay">
+    <h2 style="color:#2c3e50;">You are invited</h2>
+    <button class="open-btn" onclick="startExperience()">OPEN INVITATION</button>
+</div>
 
-    <div id="fixed-background"></div>
-    <div class="lamp l1">🪔</div>
-    <div class="lamp l2">🪔</div>
-    <div class="lamp l3">🪔</div>
+<!-- Background -->
+<div id="fixed-background"></div>
 
-    <audio id="bg-music" loop>
-        <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
-    </audio>
+<!-- Lamps -->
+<div class="lamp l1">🪔</div>
+<div class="lamp l2">🪔</div>
+<div class="lamp l3">🪔</div>
 
-    <div class="scroller">
-        <section id="s1">
-            <div class="intro">
-                <h1>Bhargavi Lakshmi</h1>
-                <p>WEDS</p>
-                <h1>Krishna Sai</h1>
-            </div>
-        </section>
+<!-- Music -->
+<audio id="bg-music" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+</audio>
 
-        <section id="s2">
-            <div class="card">
-                <h1>Celebrate With Us</h1>
-                <p>12th April 2026</p>
-                <a href="#" class="rsvp">RSVP NOW</a>
-            </div>
-        </section>
-    </div>
+<!-- Scroll Content -->
+<div class="scroller">
+    
+    <section id="s1">
+        <div class="intro">
+            <h1>Bhargavi Lakshmi</h1>
+            <p>WEDS</p>
+            <h1>Krishna Sai</h1>
+        </div>
+    </section>
 
-    <script>
-        const audio = document.getElementById('bg-music');
-        const overlay = document.getElementById('entry-overlay');
-        const bg = document.getElementById('fixed-background');
+    <section id="s2">
+        <div class="card">
+            <h1>Celebrate With Us</h1>
+            <p>12th April 2026</p>
+            <a href="#" class="rsvp">RSVP NOW</a>
+        </div>
+    </section>
 
-        function startExperience() {
-            audio.play(); // Starts music on click
-            overlay.style.opacity = '0';
-            setTimeout(() => overlay.style.display = 'none', 1000);
+</div>
+
+<script>
+const audio = document.getElementById('bg-music');
+const overlay = document.getElementById('entry-overlay');
+const bg = document.getElementById('fixed-background');
+
+function startExperience() {
+    audio.play();
+    overlay.style.opacity = '0';
+    setTimeout(() => overlay.style.display = 'none', 1000);
+}
+
+/* Scroll Reveal */
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting && e.target.id === 's2') {
+            bg.classList.add('revealed');
+        } else if (e.isIntersecting && e.target.id === 's1') {
+            bg.classList.remove('revealed');
         }
+    });
+}, { threshold: 0.5 });
 
-        // Scroll Reveal Logic
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting && e.target.id === 's2') bg.classList.add('revealed');
-                else if (e.isIntersecting && e.target.id === 's1') bg.classList.remove('revealed');
-            });
-        }, { threshold: 0.5 });
+document.querySelectorAll('section').forEach(s => observer.observe(s));
 
-        document.querySelectorAll('section').forEach(s => observer.observe(s));
+/* Mouse Parallax */
+window.addEventListener('mousemove', (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 30;
+    const y = (e.clientY / window.innerHeight - 0.5) * 30;
 
-        // Parallax Effect
-        window.addEventListener('mousemove', (e) => {
-            const x = (e.clientX / window.innerWidth - 0.5) * 30;
-            const y = (e.clientY / window.innerHeight - 0.5) * 30;
-            document.querySelectorAll('.lamp').forEach(l => {
-                l.style.marginLeft = x + 'px';
-                l.style.marginTop = y + 'px';
-            });
-        });
-    </script>
+    document.querySelectorAll('.lamp').forEach(l => {
+        l.style.marginLeft = x + 'px';
+        l.style.marginTop = y + 'px';
+    });
+});
+</script>
+
 </body>
 </html>
