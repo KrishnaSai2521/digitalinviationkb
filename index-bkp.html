@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=Lato:wght@300&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #c5a059;
+            --white: #ffffff;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            height: 100%; width: 100%;
+            font-family: 'Lato', sans-serif;
+            background: #1a1a1a;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        /* Snap Container */
+        .invitation-scroll {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            height: 100vh;
+            width: 100%;
+            scroll-snap-align: start;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Background Media */
+        .bg-media {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(0.7); /* Darkens media for text readability */
+        }
+
+        /* Typography */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .date {
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        /* RSVP Button */
+        .rsvp-btn {
+            margin-top: 2rem;
+            padding: 12px 30px;
+            border: 1px solid var(--white);
+            background: rgba(255,255,255,0.1);
+            color: white;
+            text-decoration: none;
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+        }
+
+        .rsvp-btn:hover {
+            background: var(--white);
+            color: black;
+        }
+
+        /* Music Toggle */
+        #music-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="music-toggle">🎵</button>
+    <audio id="bg-music" loop src="https://www.bensound.com/bensound-music/bensound-love.mp3"></audio>
+
+    <div class="invitation-scroll">
+        
+        <section>
+            <video class="bg-media" autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-slow-motion-of-a-bride-and-groom-walking-41005-large.mp4" type="video/mp4">
+            </video>
+            <p class="date">Save the Date</p>
+            <h1>Bhargavi Lakshmi & Krishna Sai</h1>
+            <p>Are getting married</p>
+        </section>
+
+        <section>
+            <img class="bg-media" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800" alt="Wedding">
+            <p class="date">April 12th, 2026</p>
+            <h1>SV Function Hall Peravaram.</h1>
+            <p>At 8:05 PM</p>
+        </section>
+
+        <section>
+            <img class="bg-media" src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800" alt="Cheers">
+            <h1>We'd love to see you</h1>
+            <a href="https://your-google-form-link.com" class="rsvp-btn">RSVP ONLINE</a>
+        </section>
+
+    </div>
+
+    <script>
+        // Music Play/Pause Logic
+        const music = document.getElementById('bg-music');
+        const btn = document.getElementById('music-toggle');
+        
+        btn.onclick = () => {
+            if (music.paused) {
+                music.play();
+                btn.innerText = '🔊';
+            } else {
+                music.pause();
+                btn.innerText = '🔇';
+            }
+        };
+    </script>
+</body>
+</html>
