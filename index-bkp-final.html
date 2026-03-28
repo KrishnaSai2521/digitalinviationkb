@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhargavi Lakshmi & Krishna Sai - Wedding Invitation</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Philosopher:ital,wght@0,400;0,700;1,400&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --maroon: #5C0A0A;
+            --deep-maroon: #3D0000;
+            --gold: #D4AF37;
+            --bright-gold: #FFD700;
+            --ivory: #FFFFF0;
+            --emerald: #2D5016;
+            --dark-emerald: #1B3010;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: #000;
+            color: var(--ivory);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        /* === DIVINE LOADER === */
+        .divine-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, var(--deep-maroon), #000);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 1s ease, visibility 1s ease;
+        }
+        
+        .divine-loader.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .om-container {
+            text-align: center;
+            animation: divineGlow 2s ease-in-out infinite;
+        }
+        
+        .om-symbol {
+            font-size: 100px;
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            text-shadow: 
+                0 0 20px rgba(212, 175, 55, 0.8),
+                0 0 40px rgba(212, 175, 55, 0.6),
+                0 0 60px rgba(212, 175, 55, 0.4),
+                0 0 80px rgba(212, 175, 55, 0.2);
+            animation: omPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes omPulse {
+            0%, 100% {
+                transform: scale(1);
+                text-shadow: 
+                    0 0 20px rgba(212, 175, 55, 0.8),
+                    0 0 40px rgba(212, 175, 55, 0.6),
+                    0 0 60px rgba(212, 175, 55, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                text-shadow: 
+                    0 0 30px rgba(255, 215, 0, 1),
+                    0 0 60px rgba(255, 215, 0, 0.8),
+                    0 0 90px rgba(255, 215, 0, 0.6),
+                    0 0 120px rgba(255, 215, 0, 0.4);
+            }
+        }
+        
+        @keyframes divineGlow {
+            0%, 100% {
+                filter: brightness(1);
+            }
+            50% {
+                filter: brightness(1.3);
+            }
+        }
+        
+        .loader-text {
+            margin-top: 30px;
+            font-size: 18px;
+            letter-spacing: 8px;
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+        
+        /* === MAIN CONTAINER === */
+        .main-container {
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        /* === TEMPLE BACKGROUND === */
+        .temple-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .temple-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 40%, var(--deep-maroon) 0%, #1a0000 40%, #000 100%);
+        }
+        
+        .temple-silhouette {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1400px;
+            height: 80vh;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800"><defs><linearGradient id="templeGrad" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:rgba(0,0,0,0.9);stop-opacity:1" /><stop offset="100%" style="stop-color:rgba(0,0,0,0.4);stop-opacity:1" /></linearGradient></defs><g fill="url(%23templeGrad)"><path d="M700 100 L650 200 L550 200 L500 300 L400 300 L400 800 L1000 800 L1000 300 L900 300 L850 200 L750 200 Z"/><rect x="500" y="150" width="50" height="80"/><rect x="850" y="150" width="50" height="80"/><polygon points="700,50 600,150 800,150"/><rect x="450" y="350" width="80" height="150" rx="5"/><rect x="870" y="350" width="80" height="150" rx="5"/><rect x="640" y="400" width="120" height="200" rx="10"/></g></svg>') no-repeat center bottom;
+            background-size: contain;
+            opacity: 0.3;
+            animation: templeFloat 8s ease-in-out infinite;
+        }
+        
+        @keyframes templeFloat {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(-20px);
+            }
+        }
+        
+        /* === DIVINE GLOW === */
+        .divine-glow {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.4) 0%, rgba(212, 175, 55, 0.2) 30%, transparent 70%);
+            border-radius: 50%;
+            animation: divinePulse 4s ease-in-out infinite;
+            filter: blur(60px);
+        }
+        
+        @keyframes divinePulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.3);
+                opacity: 1;
+            }
+        }
+        
+        .divine-rays {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: conic-gradient(
+                from 0deg,
+                transparent 0deg,
+                rgba(255, 215, 0, 0.1) 45deg,
+                transparent 90deg,
+                transparent 90deg,
+                rgba(255, 215, 0, 0.1) 135deg,
+                transparent 180deg,
+                transparent 180deg,
+                rgba(255, 215, 0, 0.1) 225deg,
+                transparent 270deg,
+                transparent 270deg,
+                rgba(255, 215, 0, 0.1) 315deg,
+                transparent 360deg
+            );
+            animation: raysRotate 20s linear infinite;
+            opacity: 0.5;
+        }
+        
+        @keyframes raysRotate {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+        
+        /* === FLOATING PETALS === */
+        .petals-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+            overflow: hidden;
+        }
+        
+        .petal {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: radial-gradient(ellipse at center, rgba(255, 100, 100, 0.6), rgba(255, 200, 200, 0.3));
+            border-radius: 50% 0 50% 0;
+            animation: petalFall linear infinite;
+            opacity: 0;
+        }
+        
+        @keyframes petalFall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg) translateX(100px);
+                opacity: 0;
+            }
+        }
+        
+        /* === LIGHT PARTICLES === */
+        .light-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--bright-gold);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--bright-gold);
+            animation: particleFloat linear infinite;
+            opacity: 0;
+        }
+        
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) scale(1);
+                opacity: 0;
+            }
+        }
+        
+        /* === HERO SECTION === */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            z-index: 10;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            animation: heroFadeIn 1.5s ease-out 1s backwards;
+        }
+        
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .blessing-text {
+            font-family: 'Philosopher', sans-serif;
+            font-size: 20px;
+            letter-spacing: 6px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeInDown 1s ease-out 1.5s forwards;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .ornamental-top {
+            width: 250px;
+            height: 60px;
+            margin: 0 auto 50px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 60"><path d="M125 5 Q 120 20 125 30 Q 130 20 125 5 M 125 30 L 110 45 M 125 30 L 140 45 M 90 40 Q 95 45 100 40 M 150 40 Q 155 45 160 40 M 60 50 L 80 50 M 170 50 L 190 50" stroke="%23D4AF37" stroke-width="2" fill="none" opacity="0.8"/><circle cx="125" cy="30" r="3" fill="%23FFD700"/><circle cx="110" cy="45" r="2" fill="%23D4AF37"/><circle cx="140" cy="45" r="2" fill="%23D4AF37"/></svg>') no-repeat center;
+            background-size: contain;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 2s forwards;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .couple-names {
+            margin: 60px 0;
+        }
+        
+        .couple-name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 110px;
+            line-height: 1.2;
+            color: var(--gold);
+            text-shadow: 
+                2px 2px 0px rgba(139, 69, 19, 0.5),
+                0 0 30px rgba(255, 215, 0, 0.8),
+                0 0 60px rgba(255, 215, 0, 0.4),
+                0 5px 20px rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            position: relative;
+            display: inline-block;
+            animation: nameGlowReveal 1.5s ease-out forwards;
+        }
+        
+        .couple-name:first-child {
+            animation-delay: 2.5s;
+        }
+        
+        .couple-name:last-child {
+            animation-delay: 3.2s;
+        }
+        
+        @keyframes nameGlowReveal {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(30px);
+                text-shadow: 
+                    0 0 0 rgba(139, 69, 19, 0),
+                    0 0 0 rgba(255, 215, 0, 0);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+                text-shadow: 
+                    2px 2px 0px rgba(139, 69, 19, 0.5),
+                    0 0 30px rgba(255, 215, 0, 0.8),
+                    0 0 60px rgba(255, 215, 0, 0.4),
+                    0 5px 20px rgba(0, 0, 0, 0.8);
+            }
+        }
+        
+        .name-divider {
+            font-family: 'Playfair Display', serif;
+            font-size: 50px;
+            color: rgba(255, 215, 0, 0.6);
+            margin: 30px 0;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 3.5s forwards;
+        }
+        
+        .invitation-text {
+            font-family: 'Philosopher', sans-serif;
+            font-size: 24px;
+            color: rgba(255, 255, 240, 0.9);
+            letter-spacing: 2px;
+            margin-top: 50px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 4s forwards;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+        
+        /* === ORNAMENTAL DIVIDER === */
+        .ornamental-divider {
+            width: 100%;
+            max-width: 800px;
+            height: 100px;
+            margin: 80px auto;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 100"><defs><radialGradient id="goldGrad"><stop offset="0%" style="stop-color:%23FFD700;stop-opacity:1" /><stop offset="100%" style="stop-color:%23D4AF37;stop-opacity:0.6" /></radialGradient></defs><path d="M 400 50 m -30 0 a 30 30 0 1 1 60 0 a 30 30 0 1 1 -60 0" fill="url(%23goldGrad)"/><path d="M 370 50 L 50 50 M 430 50 L 750 50" stroke="%23D4AF37" stroke-width="2" opacity="0.6"/><circle cx="200" cy="50" r="8" fill="%23FFD700" opacity="0.8"/><circle cx="600" cy="50" r="8" fill="%23FFD700" opacity="0.8"/><path d="M 350 35 Q 355 25 360 35 M 440 35 Q 445 25 450 35 M 340 65 Q 345 75 350 65 M 450 65 Q 455 75 460 65" stroke="%23D4AF37" stroke-width="1.5" fill="none"/></svg>') no-repeat center;
+            background-size: contain;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.5));
+        }
+        
+        /* === DETAILS SECTION === */
+        .details-section {
+            position: relative;
+            padding: 120px 20px;
+            z-index: 10;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 50%, transparent 100%);
+        }
+        
+        .details-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 48px;
+            text-align: center;
+            color: var(--gold);
+            margin-bottom: 80px;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            text-shadow: 
+                0 0 20px rgba(255, 215, 0, 0.6),
+                0 5px 15px rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .section-title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .detail-card {
+            background: linear-gradient(135deg, 
+                rgba(92, 10, 10, 0.7) 0%, 
+                rgba(61, 0, 0, 0.8) 100%);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                0 15px 50px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 215, 0, 0.2);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease, transform 0.3s ease;
+        }
+        
+        .detail-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .detail-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .detail-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 
+                0 25px 70px rgba(212, 175, 55, 0.4),
+                inset 0 1px 0 rgba(255, 215, 0, 0.4);
+        }
+        
+        .detail-card:hover::before {
+            opacity: 1;
+        }
+        
+        .detail-icon {
+            font-size: 50px;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
+            animation: iconGlow 2s ease-in-out infinite;
+        }
+        
+        @keyframes iconGlow {
+            0%, 100% {
+                filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+            }
+            50% {
+                filter: drop-shadow(0 0 25px rgba(255, 215, 0, 1));
+            }
+        }
+        
+        .detail-title {
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            letter-spacing: 3px;
+            color: rgba(212, 175, 55, 0.8);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        
+        .detail-content {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--ivory);
+            line-height: 1.6;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+        
+        /* === TEMPLE CARVING DIVIDER === */
+        .temple-divider {
+            width: 100%;
+            max-width: 1000px;
+            height: 120px;
+            margin: 100px auto;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 120"><defs><linearGradient id="carvingGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:%23D4AF37;stop-opacity:0.3" /><stop offset="50%" style="stop-color:%23FFD700;stop-opacity:0.8" /><stop offset="100%" style="stop-color:%23D4AF37;stop-opacity:0.3" /></linearGradient></defs><rect x="450" y="50" width="100" height="60" rx="5" fill="url(%23carvingGrad)"/><path d="M 500 50 L 480 20 L 520 20 Z" fill="%23FFD700" opacity="0.9"/><circle cx="500" cy="80" r="15" fill="none" stroke="%23FFD700" stroke-width="2"/><path d="M 420 80 L 580 80 M 380 60 Q 390 70 400 60 M 600 60 Q 610 70 620 60" stroke="%23D4AF37" stroke-width="2" fill="none"/><circle cx="350" cy="80" r="5" fill="%23FFD700"/><circle cx="650" cy="80" r="5" fill="%23FFD700"/><path d="M 50 80 L 320 80 M 680 80 L 950 80" stroke="%23D4AF37" stroke-width="1" opacity="0.5"/></svg>') no-repeat center;
+            background-size: contain;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 1s ease, transform 1s ease;
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4));
+        }
+        
+        .temple-divider.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        /* === CLOSING SECTION === */
+        .closing-section {
+            position: relative;
+            padding: 120px 20px;
+            z-index: 10;
+            text-align: center;
+        }
+        
+        .closing-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, 
+                rgba(92, 10, 10, 0.6) 0%, 
+                rgba(45, 80, 22, 0.6) 100%);
+            border: 3px solid rgba(212, 175, 55, 0.4);
+            border-radius: 30px;
+            padding: 80px 60px;
+            backdrop-filter: blur(15px);
+            box-shadow: 
+                0 20px 70px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(255, 215, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .closing-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .closing-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .closing-message {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            font-style: italic;
+            color: var(--ivory);
+            line-height: 1.8;
+            text-shadow: 
+                0 0 20px rgba(255, 215, 0, 0.4),
+                0 5px 15px rgba(0, 0, 0, 0.8);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .closing-message::before {
+            content: '❝';
+            position: absolute;
+            top: -40px;
+            left: -20px;
+            font-size: 100px;
+            color: rgba(255, 215, 0, 0.3);
+            font-family: Georgia, serif;
+        }
+        
+        .closing-message::after {
+            content: '❞';
+            position: absolute;
+            bottom: -60px;
+            right: -20px;
+            font-size: 100px;
+            color: rgba(255, 215, 0, 0.3);
+            font-family: Georgia, serif;
+        }
+        
+        /* === DIYAS === */
+        .diyas-container {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 80px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .diyas-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .diya {
+            position: relative;
+            width: 50px;
+            height: 50px;
+        }
+        
+        .diya-base {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 20px;
+            background: linear-gradient(to bottom, var(--dark-gold), var(--gold));
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.6);
+        }
+        
+        .diya-flame {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 30px;
+            background: radial-gradient(ellipse at center bottom, #FFD700 0%, #FFA500 50%, transparent 100%);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: flameFlicker 1.5s ease-in-out infinite;
+            filter: blur(1px);
+        }
+        
+        .diya-flame::after {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.8) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(8px);
+            animation: glowPulse 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes flameFlicker {
+            0%, 100% {
+                transform: translateX(-50%) scaleY(1);
+            }
+            25% {
+                transform: translateX(-50%) scaleY(1.1) translateY(-2px);
+            }
+            50% {
+                transform: translateX(-50%) scaleY(0.95);
+            }
+            75% {
+                transform: translateX(-50%) scaleY(1.05) translateY(-1px);
+            }
+        }
+        
+        @keyframes glowPulse {
+            0%, 100% {
+                opacity: 0.8;
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1.2);
+            }
+        }
+        
+        /* === SCROLL INDICATOR === */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: fadeIn 1s ease-out 5s forwards, bounce 2s ease-in-out 6s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(15px);
+            }
+        }
+        
+        .scroll-text {
+            color: var(--gold);
+            font-size: 12px;
+            letter-spacing: 3px;
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+        }
+        
+        .scroll-arrow {
+            width: 30px;
+            height: 50px;
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            position: relative;
+            margin: 0 auto;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+        }
+        
+        .scroll-arrow::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--bright-gold);
+            animation: scrollDot 2s ease-in-out infinite;
+        }
+        
+        @keyframes scrollDot {
+            0%, 100% {
+                top: 10px;
+                opacity: 1;
+            }
+            50% {
+                top: 30px;
+                opacity: 0.3;
+            }
+        }
+        
+        /* === RESPONSIVE === */
+        @media (max-width: 968px) {
+            .om-symbol {
+                font-size: 70px;
+            }
+            
+            .couple-name {
+                font-size: 70px;
+            }
+            
+            .blessing-text {
+                font-size: 16px;
+                letter-spacing: 4px;
+            }
+            
+            .invitation-text {
+                font-size: 20px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+                letter-spacing: 4px;
+            }
+            
+            .detail-card {
+                padding: 40px 30px;
+            }
+            
+            .detail-content {
+                font-size: 24px;
+            }
+            
+            .closing-message {
+                font-size: 28px;
+            }
+            
+            .closing-content {
+                padding: 60px 40px;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .couple-name {
+                font-size: 50px;
+            }
+            
+            .blessing-text {
+                font-size: 14px;
+                letter-spacing: 3px;
+            }
+            
+            .invitation-text {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .closing-message {
+                font-size: 22px;
+            }
+            
+            .closing-content {
+                padding: 50px 30px;
+            }
+            
+            .diyas-container {
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Divine Loader -->
+    <div class="divine-loader" id="divineLoader">
+        <div class="om-container">
+            <div class="om-symbol">ॐ</div>
+            <div class="loader-text">Shubh Vivah</div>
+        </div>
+    </div>
+    
+    <!-- Temple Background -->
+    <div class="temple-background">
+        <div class="temple-layer"></div>
+        <div class="divine-glow"></div>
+        <div class="divine-rays"></div>
+        <div class="temple-silhouette"></div>
+    </div>
+    
+    <!-- Floating Petals -->
+    <div class="petals-container" id="petalsContainer"></div>
+    
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="blessing-text">With Divine Blessings</div>
+                
+                <div class="ornamental-top"></div>
+                
+                <div class="couple-names">
+                    <div class="couple-name">Bhargavi Lakshmi</div>
+                    <div class="name-divider">&</div>
+                    <div class="couple-name">Krishna Sai</div>
+                </div>
+                
+                <div class="invitation-text">
+                    Together with their families, invite you to celebrate their union
+                </div>
+                
+                <div class="scroll-indicator">
+                    <div class="scroll-text">Scroll</div>
+                    <div class="scroll-arrow"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ornamental Divider -->
+        <div class="ornamental-divider"></div>
+        
+        <!-- Details Section -->
+        <section class="details-section">
+            <div class="details-container">
+                <h2 class="section-title">Wedding Details</h2>
+                
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <div class="detail-icon">🕉️</div>
+                        <div class="detail-title">Sacred Venue</div>
+                        <div class="detail-content">SV Function Hall<br>Peravaram</div>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <div class="detail-icon">📅</div>
+                        <div class="detail-title">Auspicious Date</div>
+                        <div class="detail-content">April 12th<br>2026</div>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <div class="detail-icon">⏰</div>
+                        <div class="detail-title">Muhurtham</div>
+                        <div class="detail-content">8:05 PM</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Temple Carving Divider -->
+        <div class="temple-divider"></div>
+        
+        <!-- Closing Section -->
+        <section class="closing-section">
+            <div class="closing-content">
+                <p class="closing-message">
+                    Your presence will make our celebration complete and our hearts full
+                </p>
+            </div>
+            
+            <div class="diyas-container">
+                <div class="diya">
+                    <div class="diya-base"></div>
+                    <div class="diya-flame"></div>
+                </div>
+                <div class="diya">
+                    <div class="diya-base"></div>
+                    <div class="diya-flame"></div>
+                </div>
+                <div class="diya">
+                    <div class="diya-base"></div>
+                    <div class="diya-flame"></div>
+                </div>
+                <div class="diya">
+                    <div class="diya-base"></div>
+                    <div class="diya-flame"></div>
+                </div>
+                <div class="diya">
+                    <div class="diya-base"></div>
+                    <div class="diya-flame"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script>
+        // Remove loader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('divineLoader').classList.add('fade-out');
+            }, 2500);
+        });
+        
+        // Create floating petals
+        function createPetals() {
+            const container = document.getElementById('petalsContainer');
+            const petalCount = 40;
+            
+            for (let i = 0; i < petalCount; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                petal.style.left = Math.random() * 100 + '%';
+                petal.style.animationDuration = (15 + Math.random() * 15) + 's';
+                petal.style.animationDelay = Math.random() * 10 + 's';
+                container.appendChild(petal);
+            }
+            
+            // Add light particles
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'light-particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                container.appendChild(particle);
+            }
+        }
+        
+        // Parallax effect
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const temple = document.querySelector('.temple-silhouette');
+            const glow = document.querySelector('.divine-glow');
+            const rays = document.querySelector('.divine-rays');
+            
+            if (temple) {
+                temple.style.transform = `translateX(-50%) translateY(${scrolled * 0.3}px)`;
+                temple.style.opacity = 1 - (scrolled / 1000);
+            }
+            
+            if (glow) {
+                glow.style.transform = `translate(-50%, -50%) scale(${1 + scrolled / 2000})`;
+                glow.style.opacity = 0.6 - (scrolled / 1500);
+            }
+            
+            if (rays) {
+                rays.style.opacity = 0.5 - (scrolled / 1200);
+            }
+        });
+        
+        // Scroll reveal animations
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements
+        document.addEventListener('DOMContentLoaded', function() {
+            createPetals();
+            
+            document.querySelectorAll('.section-title, .detail-card, .ornamental-divider, .temple-divider, .closing-content, .diyas-container').forEach(el => {
+                observer.observe(el);
+            });
+        });
+        
+        // Smooth scroll
+        document.querySelector('.scroll-indicator')?.addEventListener('click', function() {
+            document.querySelector('.details-section')?.scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
