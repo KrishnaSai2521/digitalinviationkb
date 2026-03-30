@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhargavi Lakshmi & Krishna Sai - Wedding Invitation</title>
+    <title>Krishna Sai & Bhargavi - Wedding Invitation</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Philosopher:ital,wght@0,400;0,700;1,400&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Great+Vibes&family=Cinzel:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -18,317 +18,333 @@
         }
         
         :root {
-            --maroon: #5C0A0A;
-            --deep-maroon: #3D0000;
-            --gold: #D4AF37;
-            --bright-gold: #FFD700;
-            --ivory: #FFFFF0;
-            --emerald: #2D5016;
-            --dark-emerald: #1B3010;
+            --gold: #C9A34E;
+            --dark-gold: #A67C3A;
+            --maroon: #6A1B1A;
+            --cream: #F5E6D3;
+            --peach: #F2C6A0;
+            --green: #2E7D32;
+            --ivory: #FFF9F0;
         }
         
         body {
-            font-family: 'Cormorant Garamond', serif;
-            background: #000;
-            color: var(--ivory);
+            font-family: 'Lato', sans-serif;
+            background: var(--cream);
+            color: var(--maroon);
             overflow-x: hidden;
-            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
         }
         
-        /* === DIVINE LOADER === */
-        .divine-loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, var(--deep-maroon), #000);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            transition: opacity 1s ease, visibility 1s ease;
-        }
-        
-        .divine-loader.fade-out {
-            opacity: 0;
-            visibility: hidden;
-        }
-        
-        .om-container {
-            text-align: center;
-            animation: divineGlow 2s ease-in-out infinite;
-        }
-        
-        .om-symbol {
-            font-size: 100px;
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            text-shadow: 
-                0 0 20px rgba(212, 175, 55, 0.8),
-                0 0 40px rgba(212, 175, 55, 0.6),
-                0 0 60px rgba(212, 175, 55, 0.4),
-                0 0 80px rgba(212, 175, 55, 0.2);
-            animation: omPulse 2s ease-in-out infinite;
-        }
-        
-        @keyframes omPulse {
-            0%, 100% {
-                transform: scale(1);
-                text-shadow: 
-                    0 0 20px rgba(212, 175, 55, 0.8),
-                    0 0 40px rgba(212, 175, 55, 0.6),
-                    0 0 60px rgba(212, 175, 55, 0.4);
-            }
-            50% {
-                transform: scale(1.05);
-                text-shadow: 
-                    0 0 30px rgba(255, 215, 0, 1),
-                    0 0 60px rgba(255, 215, 0, 0.8),
-                    0 0 90px rgba(255, 215, 0, 0.6),
-                    0 0 120px rgba(255, 215, 0, 0.4);
-            }
-        }
-        
-        @keyframes divineGlow {
-            0%, 100% {
-                filter: brightness(1);
-            }
-            50% {
-                filter: brightness(1.3);
-            }
-        }
-        
-        .loader-text {
-            margin-top: 30px;
-            font-size: 18px;
-            letter-spacing: 8px;
-            color: var(--gold);
-            font-family: 'Cinzel', serif;
-            text-transform: uppercase;
-            opacity: 0.8;
-        }
-        
-        /* === MAIN CONTAINER === */
-        .main-container {
+        /* === MAIN CANVAS === */
+        .canvas {
             position: relative;
-            min-height: 100vh;
-        }
-        
-        /* === TEMPLE BACKGROUND === */
-        .temple-background {
-            position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
-            z-index: 0;
+            max-width: 390px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background: 
+                linear-gradient(180deg, 
+                    #FFF9F0 0%,
+                    #F5E6D3 20%,
+                    #F2C6A0 40%,
+                    #F5E6D3 60%,
+                    #FFF9F0 80%,
+                    #F5E6D3 100%
+                );
+            position: relative;
             overflow: hidden;
         }
         
-        .temple-layer {
+        /* Watercolor texture overlay */
+        .canvas::before {
+            content: '';
             position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 50% 40%, var(--deep-maroon) 0%, #1a0000 40%, #000 100%);
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(242, 198, 160, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(201, 163, 78, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 70%, rgba(245, 230, 211, 0.4) 0%, transparent 50%);
+            opacity: 0.8;
+            pointer-events: none;
         }
         
-        .temple-silhouette {
+        /* Grain texture */
+        .canvas::after {
+            content: '';
             position: absolute;
-            bottom: -50px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.08"/></svg>');
+            opacity: 0.6;
+            mix-blend-mode: overlay;
+            pointer-events: none;
+        }
+        
+        /* === PARALLAX BACKGROUND === */
+        .parallax-bg {
+            position: fixed;
+            top: 0;
             left: 50%;
             transform: translateX(-50%);
             width: 100%;
-            max-width: 1400px;
-            height: 80vh;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800"><defs><linearGradient id="templeGrad" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:rgba(0,0,0,0.9);stop-opacity:1" /><stop offset="100%" style="stop-color:rgba(0,0,0,0.4);stop-opacity:1" /></linearGradient></defs><g fill="url(%23templeGrad)"><path d="M700 100 L650 200 L550 200 L500 300 L400 300 L400 800 L1000 800 L1000 300 L900 300 L850 200 L750 200 Z"/><rect x="500" y="150" width="50" height="80"/><rect x="850" y="150" width="50" height="80"/><polygon points="700,50 600,150 800,150"/><rect x="450" y="350" width="80" height="150" rx="5"/><rect x="870" y="350" width="80" height="150" rx="5"/><rect x="640" y="400" width="120" height="200" rx="10"/></g></svg>') no-repeat center bottom;
-            background-size: contain;
-            opacity: 0.3;
-            animation: templeFloat 8s ease-in-out infinite;
+            max-width: 390px;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
         }
         
-        @keyframes templeFloat {
+        /* === CONTENT WRAPPER === */
+        .content {
+            position: relative;
+            z-index: 10;
+            padding: 0;
+        }
+        
+        /* === HERO SECTION === */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 24px;
+            position: relative;
+        }
+        
+        /* Decorative Elements */
+        .decoration {
+            position: absolute;
+            pointer-events: none;
+        }
+        
+        /* Hanging Marigold Garlands */
+        .garland {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 120px;
+            z-index: 5;
+        }
+        
+        .garland-left {
+            position: absolute;
+            top: -10px;
+            left: 10%;
+            width: 60px;
+            height: 140px;
+            background: linear-gradient(to bottom,
+                transparent 0%,
+                rgba(255, 140, 0, 0.6) 20%,
+                rgba(255, 165, 0, 0.8) 40%,
+                rgba(255, 140, 0, 0.6) 80%,
+                transparent 100%
+            );
+            border-radius: 50%;
+            filter: blur(2px);
+            animation: sway 4s ease-in-out infinite;
+            transform-origin: top center;
+        }
+        
+        .garland-right {
+            position: absolute;
+            top: -10px;
+            right: 10%;
+            width: 60px;
+            height: 140px;
+            background: linear-gradient(to bottom,
+                transparent 0%,
+                rgba(255, 140, 0, 0.6) 20%,
+                rgba(255, 165, 0, 0.8) 40%,
+                rgba(255, 140, 0, 0.6) 80%,
+                transparent 100%
+            );
+            border-radius: 50%;
+            filter: blur(2px);
+            animation: sway 4s ease-in-out infinite 0.5s;
+            transform-origin: top center;
+        }
+        
+        .garland-center {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 100px;
+            border-bottom: 80px solid transparent;
+            border-left: 90px solid rgba(255, 165, 0, 0.7);
+            border-right: 90px solid rgba(255, 165, 0, 0.7);
+            filter: blur(2px);
+            animation: swayCenter 5s ease-in-out infinite;
+        }
+        
+        @keyframes sway {
+            0%, 100% {
+                transform: rotate(-3deg);
+            }
+            50% {
+                transform: rotate(3deg);
+            }
+        }
+        
+        @keyframes swayCenter {
             0%, 100% {
                 transform: translateX(-50%) translateY(0);
             }
             50% {
-                transform: translateX(-50%) translateY(-20px);
+                transform: translateX(-50%) translateY(5px);
             }
         }
         
-        /* === DIVINE GLOW === */
-        .divine-glow {
+        /* Temple Bells */
+        .bells {
             position: absolute;
-            top: 30%;
+            top: 80px;
+            display: flex;
+            gap: 40px;
+            z-index: 6;
             left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.4) 0%, rgba(212, 175, 55, 0.2) 30%, transparent 70%);
-            border-radius: 50%;
-            animation: divinePulse 4s ease-in-out infinite;
-            filter: blur(60px);
+            transform: translateX(-50%);
         }
         
-        @keyframes divinePulse {
+        .bell {
+            width: 20px;
+            height: 25px;
+            background: linear-gradient(to bottom, var(--gold), var(--dark-gold));
+            border-radius: 0 0 50% 50%;
+            position: relative;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+            animation: bellRing 3s ease-in-out infinite;
+            transform-origin: top center;
+        }
+        
+        .bell::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            background: var(--dark-gold);
+            border-radius: 50%;
+        }
+        
+        .bell::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 8px;
+            background: var(--maroon);
+            border-radius: 50%;
+        }
+        
+        .bell:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+        
+        .bell:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+        
+        @keyframes bellRing {
             0%, 100% {
-                transform: translate(-50%, -50%) scale(1);
-                opacity: 0.6;
+                transform: rotate(0deg);
+            }
+            10% {
+                transform: rotate(-8deg);
+            }
+            20% {
+                transform: rotate(8deg);
+            }
+            30% {
+                transform: rotate(-5deg);
+            }
+            40% {
+                transform: rotate(5deg);
             }
             50% {
-                transform: translate(-50%, -50%) scale(1.3);
-                opacity: 1;
+                transform: rotate(0deg);
             }
         }
         
-        .divine-rays {
+        /* Banana Leaves */
+        .leaf {
             position: absolute;
-            top: 30%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 800px;
-            height: 800px;
-            background: conic-gradient(
-                from 0deg,
-                transparent 0deg,
-                rgba(255, 215, 0, 0.1) 45deg,
-                transparent 90deg,
-                transparent 90deg,
-                rgba(255, 215, 0, 0.1) 135deg,
-                transparent 180deg,
-                transparent 180deg,
-                rgba(255, 215, 0, 0.1) 225deg,
-                transparent 270deg,
-                transparent 270deg,
-                rgba(255, 215, 0, 0.1) 315deg,
-                transparent 360deg
+            width: 80px;
+            height: 300px;
+            background: linear-gradient(135deg,
+                transparent 0%,
+                rgba(46, 125, 50, 0.4) 30%,
+                rgba(46, 125, 50, 0.6) 50%,
+                rgba(46, 125, 50, 0.4) 70%,
+                transparent 100%
             );
-            animation: raysRotate 20s linear infinite;
-            opacity: 0.5;
+            border-radius: 50% 20%;
+            filter: blur(1px);
         }
         
-        @keyframes raysRotate {
-            from {
-                transform: translate(-50%, -50%) rotate(0deg);
-            }
-            to {
-                transform: translate(-50%, -50%) rotate(360deg);
-            }
+        .leaf-left {
+            top: 100px;
+            left: -20px;
+            transform: rotate(-15deg);
+            opacity: 0.7;
         }
         
-        /* === FLOATING PETALS === */
-        .petals-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 100;
-            overflow: hidden;
+        .leaf-right {
+            top: 100px;
+            right: -20px;
+            transform: rotate(15deg) scaleX(-1);
+            opacity: 0.7;
         }
         
-        .petal {
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            background: radial-gradient(ellipse at center, rgba(255, 100, 100, 0.6), rgba(255, 200, 200, 0.3));
-            border-radius: 50% 0 50% 0;
-            animation: petalFall linear infinite;
-            opacity: 0;
-        }
-        
-        @keyframes petalFall {
-            0% {
-                transform: translateY(-100px) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.8;
-            }
-            90% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(100vh) rotate(360deg) translateX(100px);
-                opacity: 0;
-            }
-        }
-        
-        /* === LIGHT PARTICLES === */
-        .light-particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--bright-gold);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--bright-gold);
-            animation: particleFloat linear infinite;
-            opacity: 0;
-        }
-        
-        @keyframes particleFloat {
-            0% {
-                transform: translateY(100vh) scale(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100px) scale(1);
-                opacity: 0;
-            }
-        }
-        
-        /* === HERO SECTION === */
-        .hero-section {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-            z-index: 10;
-        }
-        
-        .hero-content {
-            max-width: 1200px;
-            width: 100%;
-            animation: heroFadeIn 1.5s ease-out 1s backwards;
-        }
-        
-        @keyframes heroFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .blessing-text {
-            font-family: 'Philosopher', sans-serif;
-            font-size: 20px;
-            letter-spacing: 6px;
-            color: var(--gold);
-            text-transform: uppercase;
+        /* Ganesha Icon */
+        .ganesha {
+            width: 60px;
+            height: 60px;
             margin-bottom: 40px;
             opacity: 0;
-            animation: fadeInDown 1s ease-out 1.5s forwards;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+            animation: fadeInScale 1s ease-out 0.5s forwards;
         }
         
-        @keyframes fadeInDown {
+        .ganesha svg {
+            width: 100%;
+            height: 100%;
+            fill: var(--gold);
+            filter: drop-shadow(0 2px 8px rgba(201, 163, 78, 0.4));
+        }
+        
+        @keyframes fadeInScale {
             from {
                 opacity: 0;
-                transform: translateY(-30px);
+                transform: scale(0.8) translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        /* Names */
+        .names {
+            text-align: center;
+            margin: 40px 0;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1s forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -336,15 +352,34 @@
             }
         }
         
-        .ornamental-top {
-            width: 250px;
-            height: 60px;
-            margin: 0 auto 50px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 60"><path d="M125 5 Q 120 20 125 30 Q 130 20 125 5 M 125 30 L 110 45 M 125 30 L 140 45 M 90 40 Q 95 45 100 40 M 150 40 Q 155 45 160 40 M 60 50 L 80 50 M 170 50 L 190 50" stroke="%23D4AF37" stroke-width="2" fill="none" opacity="0.8"/><circle cx="125" cy="30" r="3" fill="%23FFD700"/><circle cx="110" cy="45" r="2" fill="%23D4AF37"/><circle cx="140" cy="45" r="2" fill="%23D4AF37"/></svg>') no-repeat center;
-            background-size: contain;
+        .name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 56px;
+            line-height: 1.2;
+            color: var(--maroon);
+            text-shadow: 0 2px 8px rgba(106, 27, 26, 0.2);
+            margin: 8px 0;
+        }
+        
+        .ampersand {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            color: var(--gold);
+            margin: 16px 0;
+            font-style: italic;
+        }
+        
+        /* Invitation Text */
+        .invitation-text {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--maroon);
+            max-width: 320px;
+            margin: 40px auto 0;
             opacity: 0;
-            animation: fadeIn 1s ease-out 2s forwards;
-            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+            animation: fadeIn 1s ease-out 1.5s forwards;
         }
         
         @keyframes fadeIn {
@@ -353,144 +388,326 @@
             }
         }
         
-        .couple-names {
-            margin: 60px 0;
-        }
-        
-        .couple-name {
-            font-family: 'Great Vibes', cursive;
-            font-size: 110px;
-            line-height: 1.2;
-            color: var(--gold);
-            text-shadow: 
-                2px 2px 0px rgba(139, 69, 19, 0.5),
-                0 0 30px rgba(255, 215, 0, 0.8),
-                0 0 60px rgba(255, 215, 0, 0.4),
-                0 5px 20px rgba(0, 0, 0, 0.8);
-            opacity: 0;
+        /* Decorative Divider */
+        .divider {
+            width: 150px;
+            height: 2px;
+            background: linear-gradient(to right, 
+                transparent, 
+                var(--gold), 
+                transparent
+            );
+            margin: 60px auto;
             position: relative;
-            display: inline-block;
-            animation: nameGlowReveal 1.5s ease-out forwards;
-        }
-        
-        .couple-name:first-child {
-            animation-delay: 2.5s;
-        }
-        
-        .couple-name:last-child {
-            animation-delay: 3.2s;
-        }
-        
-        @keyframes nameGlowReveal {
-            from {
-                opacity: 0;
-                transform: scale(0.8) translateY(30px);
-                text-shadow: 
-                    0 0 0 rgba(139, 69, 19, 0),
-                    0 0 0 rgba(255, 215, 0, 0);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-                text-shadow: 
-                    2px 2px 0px rgba(139, 69, 19, 0.5),
-                    0 0 30px rgba(255, 215, 0, 0.8),
-                    0 0 60px rgba(255, 215, 0, 0.4),
-                    0 5px 20px rgba(0, 0, 0, 0.8);
-            }
-        }
-        
-        .name-divider {
-            font-family: 'Playfair Display', serif;
-            font-size: 50px;
-            color: rgba(255, 215, 0, 0.6);
-            margin: 30px 0;
             opacity: 0;
-            animation: fadeIn 1s ease-out 3.5s forwards;
+            animation: fadeIn 1s ease-out 2s forwards;
         }
         
-        .invitation-text {
-            font-family: 'Philosopher', sans-serif;
-            font-size: 24px;
-            color: rgba(255, 255, 240, 0.9);
-            letter-spacing: 2px;
-            margin-top: 50px;
-            opacity: 0;
-            animation: fadeIn 1s ease-out 4s forwards;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-        }
-        
-        /* === ORNAMENTAL DIVIDER === */
-        .ornamental-divider {
-            width: 100%;
-            max-width: 800px;
-            height: 100px;
-            margin: 80px auto;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 100"><defs><radialGradient id="goldGrad"><stop offset="0%" style="stop-color:%23FFD700;stop-opacity:1" /><stop offset="100%" style="stop-color:%23D4AF37;stop-opacity:0.6" /></radialGradient></defs><path d="M 400 50 m -30 0 a 30 30 0 1 1 60 0 a 30 30 0 1 1 -60 0" fill="url(%23goldGrad)"/><path d="M 370 50 L 50 50 M 430 50 L 750 50" stroke="%23D4AF37" stroke-width="2" opacity="0.6"/><circle cx="200" cy="50" r="8" fill="%23FFD700" opacity="0.8"/><circle cx="600" cy="50" r="8" fill="%23FFD700" opacity="0.8"/><path d="M 350 35 Q 355 25 360 35 M 440 35 Q 445 25 450 35 M 340 65 Q 345 75 350 65 M 450 65 Q 455 75 460 65" stroke="%23D4AF37" stroke-width="1.5" fill="none"/></svg>') no-repeat center;
-            background-size: contain;
-            opacity: 0;
-            animation: fadeIn 1s ease-out forwards;
-            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.5));
-        }
-        
-        /* === DETAILS SECTION === */
-        .details-section {
-            position: relative;
-            padding: 120px 20px;
-            z-index: 10;
-            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 50%, transparent 100%);
-        }
-        
-        .details-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .section-title {
-            font-family: 'Cinzel', serif;
-            font-size: 48px;
-            text-align: center;
+        .divider::before {
+            content: '❀';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             color: var(--gold);
-            margin-bottom: 80px;
-            text-transform: uppercase;
-            letter-spacing: 8px;
-            text-shadow: 
-                0 0 20px rgba(255, 215, 0, 0.6),
-                0 5px 15px rgba(0, 0, 0, 0.8);
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease, transform 1s ease;
+            font-size: 20px;
+            background: var(--cream);
+            padding: 0 10px;
         }
         
-        .section-title.visible {
+        /* === ILLUSTRATION SECTION === */
+        .illustration-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 60px 24px 40px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1.5s ease, transform 1.5s ease;
+        }
+        
+        .illustration-section.visible {
             opacity: 1;
             transform: translateY(0);
         }
         
-        .details-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+        /* Temple Illustration */
+        .temple {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 280px;
+            height: 320px;
+            opacity: 0;
+            transition: opacity 2s ease;
         }
         
-        .detail-card {
-            background: linear-gradient(135deg, 
-                rgba(92, 10, 10, 0.7) 0%, 
-                rgba(61, 0, 0, 0.8) 100%);
-            border: 2px solid rgba(212, 175, 55, 0.3);
-            border-radius: 20px;
-            padding: 50px 40px;
-            text-align: center;
+        .temple.visible {
+            opacity: 1;
+        }
+        
+        .temple-structure {
             position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-            box-shadow: 
-                0 15px 50px rgba(0, 0, 0, 0.5),
-                inset 0 1px 0 rgba(255, 215, 0, 0.2);
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Temple Layers */
+        .temple-base {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 80px;
+            background: linear-gradient(to bottom, #A67C3A, #8B6332);
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .temple-layer {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+        }
+        
+        .layer-1 {
+            bottom: 80px;
+            border-bottom: 60px solid #C9A34E;
+            border-left-width: 80px;
+            border-right-width: 80px;
+        }
+        
+        .layer-2 {
+            bottom: 140px;
+            border-bottom: 50px solid #D4AF37;
+            border-left-width: 65px;
+            border-right-width: 65px;
+        }
+        
+        .layer-3 {
+            bottom: 190px;
+            border-bottom: 40px solid #E5C158;
+            border-left-width: 50px;
+            border-right-width: 50px;
+        }
+        
+        .kalasam {
+            position: absolute;
+            bottom: 230px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 35px;
+        }
+        
+        .kalasam-pot {
+            width: 24px;
+            height: 22px;
+            background: linear-gradient(to bottom, #FFD700, #C9A34E);
+            border-radius: 0 0 12px 12px;
+        }
+        
+        .kalasam-top {
+            width: 12px;
+            height: 13px;
+            background: #FF6B35;
+            margin: 0 auto;
+            border-radius: 50% 50% 0 0;
+        }
+        
+        .temple-door {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 55px;
+            background: linear-gradient(to bottom, rgba(106, 27, 26, 0.6), rgba(61, 0, 0, 0.8));
+            border-radius: 8px 8px 0 0;
+        }
+        
+        /* Couple Illustration */
+        .couple {
+            position: relative;
+            width: 200px;
+            height: 280px;
+            margin-bottom: 40px;
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease, transform 0.3s ease;
+            transform: translateY(30px);
+            transition: opacity 1.5s ease, transform 1.5s ease;
+        }
+        
+        .couple.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Groom */
+        .groom {
+            position: absolute;
+            right: 45%;
+            bottom: 40px;
+            width: 70px;
+            height: 180px;
+        }
+        
+        .groom-body {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 140px;
+            background: linear-gradient(to bottom, #FFF9F0, #F5E6D3);
+            border-radius: 35px 35px 5px 5px;
+            border: 2px solid var(--gold);
+        }
+        
+        .groom-head {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: #D4A574;
+            border-radius: 50%;
+        }
+        
+        .groom-hair {
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 42px;
+            height: 20px;
+            background: #2C1810;
+            border-radius: 50% 50% 0 0;
+        }
+        
+        /* Bride */
+        .bride {
+            position: absolute;
+            left: 45%;
+            bottom: 40px;
+            width: 75px;
+            height: 180px;
+        }
+        
+        .bride-body {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 140px;
+            background: linear-gradient(135deg, #FF6B6B, #C44569);
+            border-radius: 35px 35px 5px 5px;
+            border: 2px solid var(--gold);
+        }
+        
+        .bride-pallu {
+            position: absolute;
+            top: 20px;
+            right: -5px;
+            width: 30px;
+            height: 80px;
+            background: linear-gradient(to bottom, #FF6B6B, #C44569);
+            border-radius: 15px;
+            opacity: 0.8;
+        }
+        
+        .bride-head {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: #D4A574;
+            border-radius: 50%;
+        }
+        
+        .bride-hair {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 44px;
+            height: 30px;
+            background: #2C1810;
+            border-radius: 50% 50% 0 0;
+        }
+        
+        .bride-braid {
+            position: absolute;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 90px;
+            background: linear-gradient(to bottom, #2C1810 0%, #2C1810 70%, #C9A34E 80%, #2C1810 90%);
+            border-radius: 6px;
+        }
+        
+        .bride-flower {
+            position: absolute;
+            top: 32px;
+            left: 5px;
+            width: 16px;
+            height: 16px;
+            background: #FF6B35;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(255, 107, 53, 0.6);
+        }
+        
+        /* Ground */
+        .ground {
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(to bottom,
+                rgba(46, 125, 50, 0.3),
+                rgba(46, 125, 50, 0.5)
+            );
+            border-radius: 50% 50% 0 0;
+            position: relative;
+        }
+        
+        .grass {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 20px;
+            background: repeating-linear-gradient(90deg,
+                transparent 0px,
+                rgba(46, 125, 50, 0.4) 2px,
+                transparent 4px
+            );
+        }
+        
+        /* === DETAILS SECTION === */
+        .details-section {
+            padding: 80px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        /* Detail Cards */
+        .detail-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 32px 24px;
+            border: 1px solid rgba(201, 163, 78, 0.3);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
         
         .detail-card.visible {
@@ -498,581 +715,396 @@
             transform: translateY(0);
         }
         
-        .detail-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.5s ease;
+        .card-icon {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 16px;
+            filter: drop-shadow(0 2px 4px rgba(201, 163, 78, 0.3));
         }
         
-        .detail-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--gold);
-            box-shadow: 
-                0 25px 70px rgba(212, 175, 55, 0.4),
-                inset 0 1px 0 rgba(255, 215, 0, 0.4);
-        }
-        
-        .detail-card:hover::before {
-            opacity: 1;
-        }
-        
-        .detail-icon {
-            font-size: 50px;
-            margin-bottom: 25px;
-            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
-            animation: iconGlow 2s ease-in-out infinite;
-        }
-        
-        @keyframes iconGlow {
-            0%, 100% {
-                filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
-            }
-            50% {
-                filter: drop-shadow(0 0 25px rgba(255, 215, 0, 1));
-            }
-        }
-        
-        .detail-title {
+        .card-title {
             font-family: 'Cinzel', serif;
-            font-size: 16px;
-            letter-spacing: 3px;
-            color: rgba(212, 175, 55, 0.8);
-            text-transform: uppercase;
-            margin-bottom: 15px;
+            font-size: 22px;
+            color: var(--maroon);
+            text-align: center;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
         }
         
-        .detail-content {
+        .card-content {
             font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            color: var(--ivory);
-            line-height: 1.6;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+            font-size: 18px;
+            color: var(--maroon);
+            text-align: center;
+            line-height: 1.8;
         }
         
-        /* === TEMPLE CARVING DIVIDER === */
-        .temple-divider {
-            width: 100%;
-            max-width: 1000px;
-            height: 120px;
-            margin: 100px auto;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 120"><defs><linearGradient id="carvingGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:%23D4AF37;stop-opacity:0.3" /><stop offset="50%" style="stop-color:%23FFD700;stop-opacity:0.8" /><stop offset="100%" style="stop-color:%23D4AF37;stop-opacity:0.3" /></linearGradient></defs><rect x="450" y="50" width="100" height="60" rx="5" fill="url(%23carvingGrad)"/><path d="M 500 50 L 480 20 L 520 20 Z" fill="%23FFD700" opacity="0.9"/><circle cx="500" cy="80" r="15" fill="none" stroke="%23FFD700" stroke-width="2"/><path d="M 420 80 L 580 80 M 380 60 Q 390 70 400 60 M 600 60 Q 610 70 620 60" stroke="%23D4AF37" stroke-width="2" fill="none"/><circle cx="350" cy="80" r="5" fill="%23FFD700"/><circle cx="650" cy="80" r="5" fill="%23FFD700"/><path d="M 50 80 L 320 80 M 680 80 L 950 80" stroke="%23D4AF37" stroke-width="1" opacity="0.5"/></svg>') no-repeat center;
-            background-size: contain;
-            opacity: 0;
-            transform: scale(0.9);
-            transition: opacity 1s ease, transform 1s ease;
-            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4));
+        .card-date {
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 8px;
         }
         
-        .temple-divider.visible {
-            opacity: 1;
-            transform: scale(1);
+        .card-location {
+            font-size: 16px;
+            opacity: 0.9;
         }
         
-        /* === CLOSING SECTION === */
-        .closing-section {
-            position: relative;
-            padding: 120px 20px;
-            z-index: 10;
+        /* === CTA SECTION === */
+        .cta-section {
+            padding: 60px 24px 80px;
             text-align: center;
         }
         
-        .closing-content {
-            max-width: 900px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, 
-                rgba(92, 10, 10, 0.6) 0%, 
-                rgba(45, 80, 22, 0.6) 100%);
-            border: 3px solid rgba(212, 175, 55, 0.4);
-            border-radius: 30px;
-            padding: 80px 60px;
-            backdrop-filter: blur(15px);
-            box-shadow: 
-                0 20px 70px rgba(0, 0, 0, 0.6),
-                inset 0 1px 0 rgba(255, 215, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-        
-        .closing-content.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .closing-content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        
-        .closing-message {
-            font-family: 'Playfair Display', serif;
-            font-size: 38px;
-            font-style: italic;
-            color: var(--ivory);
-            line-height: 1.8;
-            text-shadow: 
-                0 0 20px rgba(255, 215, 0, 0.4),
-                0 5px 15px rgba(0, 0, 0, 0.8);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .closing-message::before {
-            content: '❝';
-            position: absolute;
-            top: -40px;
-            left: -20px;
-            font-size: 100px;
-            color: rgba(255, 215, 0, 0.3);
-            font-family: Georgia, serif;
-        }
-        
-        .closing-message::after {
-            content: '❞';
-            position: absolute;
-            bottom: -60px;
-            right: -20px;
-            font-size: 100px;
-            color: rgba(255, 215, 0, 0.3);
-            font-family: Georgia, serif;
-        }
-        
-        /* === DIYAS === */
-        .diyas-container {
+        .cta-buttons {
             display: flex;
-            justify-content: center;
-            gap: 60px;
-            margin-top: 80px;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 280px;
+            margin: 0 auto;
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 1s ease, transform 1s ease;
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
         
-        .diyas-container.visible {
+        .cta-buttons.visible {
             opacity: 1;
             transform: translateY(0);
         }
         
-        .diya {
-            position: relative;
-            width: 50px;
-            height: 50px;
+        .btn {
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
         }
         
-        .diya-base {
-            position: absolute;
-            bottom: 0;
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+            color: white;
+            box-shadow: 0 4px 16px rgba(201, 163, 78, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(201, 163, 78, 0.6);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--maroon);
+            border: 2px solid var(--maroon);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--maroon);
+            color: white;
+        }
+        
+        /* === FLOATING PETALS === */
+        .petals {
+            position: fixed;
+            top: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 40px;
-            height: 20px;
-            background: linear-gradient(to bottom, var(--dark-gold), var(--gold));
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.6);
+            width: 100%;
+            max-width: 390px;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 100;
+            overflow: hidden;
         }
         
-        .diya-flame {
+        .petal {
             position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 30px;
-            background: radial-gradient(ellipse at center bottom, #FFD700 0%, #FFA500 50%, transparent 100%);
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-            animation: flameFlicker 1.5s ease-in-out infinite;
-            filter: blur(1px);
-        }
-        
-        .diya-flame::after {
-            content: '';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 30px;
-            height: 30px;
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.8) 0%, transparent 70%);
-            border-radius: 50%;
-            filter: blur(8px);
-            animation: glowPulse 1.5s ease-in-out infinite;
-        }
-        
-        @keyframes flameFlicker {
-            0%, 100% {
-                transform: translateX(-50%) scaleY(1);
-            }
-            25% {
-                transform: translateX(-50%) scaleY(1.1) translateY(-2px);
-            }
-            50% {
-                transform: translateX(-50%) scaleY(0.95);
-            }
-            75% {
-                transform: translateX(-50%) scaleY(1.05) translateY(-1px);
-            }
-        }
-        
-        @keyframes glowPulse {
-            0%, 100% {
-                opacity: 0.8;
-                transform: translateX(-50%) scale(1);
-            }
-            50% {
-                opacity: 1;
-                transform: translateX(-50%) scale(1.2);
-            }
-        }
-        
-        /* === SCROLL INDICATOR === */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 1px;
-            left: 50%;
-            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(ellipse, rgba(255, 182, 193, 0.7), rgba(255, 140, 0, 0.5));
+            border-radius: 50% 0 50% 0;
+            animation: petalFall linear infinite;
             opacity: 0;
-            animation: fadeIn 1s ease-out 5s forwards, bounce 2s ease-in-out 6s infinite;
         }
         
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateX(-50%) translateY(0);
+        @keyframes petalFall {
+            0% {
+                transform: translateY(-50px) rotate(0deg);
+                opacity: 0;
             }
-            50% {
-                transform: translateX(-50%) translateY(15px);
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg) translateX(50px);
+                opacity: 0;
             }
         }
         
-        .scroll-text {
-            color: var(--gold);
-            font-size: 12px;
-            letter-spacing: 3px;
-            font-family: 'Cinzel', serif;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 40px 24px;
+            font-size: 14px;
+            color: var(--maroon);
+            opacity: 0.7;
         }
         
-        .scroll-arrow {
-            width: 30px;
-            height: 50px;
-            border: 2px solid var(--gold);
-            border-radius: 20px;
-            position: relative;
-            margin: 15px auto 0; /* 👈 pushes it down */
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
-        }
-        
-        .scroll-arrow::before {
-            content: '';
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 6px;
-            height: 6px;
+        .footer-divider {
+            width: 60px;
+            height: 2px;
             background: var(--gold);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--bright-gold);
-            animation: scrollDot 2s ease-in-out infinite;
-        }
-        
-        @keyframes scrollDot {
-            0%, 100% {
-                top: 10px;
-                opacity: 1;
-            }
-            50% {
-                top: 30px;
-                opacity: 0.3;
-            }
+            margin: 20px auto;
         }
         
         /* === RESPONSIVE === */
-        @media (max-width: 968px) {
-            .om-symbol {
-                font-size: 70px;
-            }
-            
-            .couple-name {
-                font-size: 70px;
-            }
-            
-            .blessing-text {
-                font-size: 16px;
-                letter-spacing: 4px;
-            }
-            
-            .invitation-text {
-                font-size: 20px;
-            }
-            
-            .section-title {
-                font-size: 36px;
-                letter-spacing: 4px;
-            }
-            
-            .detail-card {
-                padding: 40px 30px;
-            }
-            
-            .detail-content {
-                font-size: 24px;
-            }
-            
-            .closing-message {
-                font-size: 28px;
-            }
-            
-            .closing-content {
-                padding: 60px 40px;
+        @media (min-width: 391px) {
+            .canvas {
+                box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
             }
         }
         
-        @media (max-width: 640px) {
-            .couple-name {
-                font-size: 50px;
-            }
-            
-            .blessing-text {
-                font-size: 14px;
-                letter-spacing: 3px;
+        @media (max-width: 360px) {
+            .name {
+                font-size: 48px;
             }
             
             .invitation-text {
-                font-size: 18px;
+                font-size: 14px;
             }
             
-            .section-title {
-                font-size: 28px;
-            }
-            
-            .details-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .closing-message {
-                font-size: 22px;
-            }
-            
-            .closing-content {
-                padding: 50px 30px;
-            }
-            
-            .diyas-container {
-                gap: 40px;
+            .card-title {
+                font-size: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Divine Loader -->
-    <div class="divine-loader" id="divineLoader">
-        <div class="om-container">
-            <div class="om-symbol">ॐ</div>
-            <div class="loader-text">Shubh Vivah</div>
+    <!-- Parallax Background -->
+    <div class="parallax-bg" id="parallaxBg"></div>
+    
+    <!-- Floating Petals -->
+    <div class="petals" id="petals"></div>
+    
+    <!-- Main Canvas -->
+    <div class="canvas">
+        <div class="content">
+            <!-- Hero Section -->
+            <section class="hero">
+                <!-- Decorative Elements -->
+                <div class="garland">
+                    <div class="garland-left"></div>
+                    <div class="garland-center"></div>
+                    <div class="garland-right"></div>
+                </div>
+                
+                <div class="bells">
+                    <div class="bell"></div>
+                    <div class="bell"></div>
+                    <div class="bell"></div>
+                </div>
+                
+                <div class="leaf leaf-left"></div>
+                <div class="leaf leaf-right"></div>
+                
+                <!-- Ganesha Icon -->
+                <div class="ganesha">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 20 Q40 25 40 35 Q40 45 50 50 Q60 45 60 35 Q60 25 50 20 Z"/>
+                        <circle cx="50" cy="35" r="8"/>
+                        <path d="M30 40 Q20 45 25 55 Q30 50 35 50 L35 65 Q35 70 40 70 L60 70 Q65 70 65 65 L65 50 Q70 50 75 55 Q80 45 70 40"/>
+                        <path d="M45 50 Q40 55 40 65 M55 50 Q60 55 60 65"/>
+                        <circle cx="45" cy="42" r="2"/>
+                        <circle cx="55" cy="42" r="2"/>
+                        <path d="M42 75 L42 85 M58 75 L58 85" stroke-width="3" stroke="currentColor" fill="none"/>
+                    </svg>
+                </div>
+                
+                <!-- Names -->
+                <div class="names">
+                    <div class="name">Krishna Sai</div>
+                    <div class="ampersand">&</div>
+                    <div class="name">Bhargavi</div>
+                </div>
+                
+                <!-- Invitation Text -->
+                <p class="invitation-text">
+                    Request your gracious presence on the auspicious occasion of their wedding
+                </p>
+                
+                <!-- Decorative Divider -->
+                <div class="divider"></div>
+            </section>
+            
+            <!-- Illustration Section -->
+            <section class="illustration-section" id="illustrationSection">
+                <!-- Temple -->
+                <div class="temple" id="temple">
+                    <div class="temple-structure">
+                        <div class="temple-base"></div>
+                        <div class="temple-layer layer-1"></div>
+                        <div class="temple-layer layer-2"></div>
+                        <div class="temple-layer layer-3"></div>
+                        <div class="kalasam">
+                            <div class="kalasam-top"></div>
+                            <div class="kalasam-pot"></div>
+                        </div>
+                        <div class="temple-door"></div>
+                    </div>
+                </div>
+                
+                <!-- Couple -->
+                <div class="couple" id="couple">
+                    <!-- Groom -->
+                    <div class="groom">
+                        <div class="groom-hair"></div>
+                        <div class="groom-head"></div>
+                        <div class="groom-body"></div>
+                    </div>
+                    
+                    <!-- Bride -->
+                    <div class="bride">
+                        <div class="bride-hair"></div>
+                        <div class="bride-head"></div>
+                        <div class="bride-flower"></div>
+                        <div class="bride-braid"></div>
+                        <div class="bride-body"></div>
+                        <div class="bride-pallu"></div>
+                    </div>
+                </div>
+                
+                <!-- Ground -->
+                <div class="ground">
+                    <div class="grass"></div>
+                </div>
+            </section>
+            
+            <!-- Details Section -->
+            <section class="details-section">
+                <!-- Wedding Ceremony Card -->
+                <div class="detail-card" data-reveal>
+                    <div class="card-icon">🕉️</div>
+                    <h3 class="card-title">Wedding Ceremony</h3>
+                    <div class="card-content">
+                        <p class="card-date">April 12th | 8:05 PM</p>
+                        <p class="card-location">SV Function Hall, Peravaram</p>
+                    </div>
+                </div>
+                
+                <!-- Reception Card -->
+                <div class="detail-card" data-reveal>
+                    <div class="card-icon">🌸</div>
+                    <h3 class="card-title">Reception</h3>
+                    <div class="card-content">
+                        <p class="card-date">April 19th | 7:05 PM</p>
+                        <p class="card-location">Gajularamaram</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div class="cta-buttons" data-reveal>
+                    <a href="#" class="btn btn-primary">View Location</a>
+                    <a href="#" class="btn btn-secondary">Save the Date</a>
+                </div>
+            </section>
+            
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-divider"></div>
+                <p>With love and blessings</p>
+                <p style="margin-top: 8px; font-size: 12px;">Krishna Sai & Bhargavi</p>
+            </footer>
         </div>
     </div>
     
-    <!-- Temple Background -->
-    <div class="temple-background">
-        <div class="temple-layer"></div>
-        <div class="divine-glow"></div>
-        <div class="divine-rays"></div>
-        <div class="temple-silhouette"></div>
-    </div>
-    
-    <!-- Floating Petals -->
-    <div class="petals-container" id="petalsContainer"></div>
-    
-    <!-- Main Container -->
-    <div class="main-container">
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-content">
-                <div class="blessing-text">With Divine Blessings</div>
-                
-                <div class="ornamental-top"></div>
-                
-                <div class="couple-names">
-                    <div class="couple-name">Bhargavi Lakshmi</div>
-                    <div class="name-divider">&</div>
-                    <div class="couple-name">Krishna Sai</div>
-                </div>
-                
-                <div class="invitation-text">
-                    Together with their families, invite you to celebrate their union
-                </div>
-                
-                <div class="scroll-indicator">
-                    <div class="scroll-text">Scroll</div>
-                    <div class="scroll-arrow"></div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Ornamental Divider -->
-        <div class="ornamental-divider"></div>
-        
-        <!-- Details Section -->
-        <section class="details-section">
-            <div class="details-container">
-                <h2 class="section-title">Wedding Details</h2>
-                
-                <div class="details-grid">
-                    <div class="detail-card">
-                        <div class="detail-icon">🕉️</div>
-                        <div class="detail-title">Sacred Venue</div>
-                        <div class="detail-content">SV Function Hall<br>Peravaram</div>
-                    </div>
-                    
-                    <div class="detail-card">
-                        <div class="detail-icon">📅</div>
-                        <div class="detail-title">Auspicious Date</div>
-                        <div class="detail-content">April 12th<br>2026</div>
-                    </div>
-                    
-                    <div class="detail-card">
-                        <div class="detail-icon">⏰</div>
-                        <div class="detail-title">Muhurtham</div>
-                        <div class="detail-content">8:05 PM</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Temple Carving Divider -->
-        <div class="temple-divider"></div>
-        
-        <!-- Closing Section -->
-        <section class="closing-section">
-            <div class="closing-content">
-                <p class="closing-message">
-                    Your presence will make our celebration complete and our hearts full
-                </p>
-            </div>
-            
-            <div class="diyas-container">
-                <div class="diya">
-                    <div class="diya-base"></div>
-                    <div class="diya-flame"></div>
-                </div>
-                <div class="diya">
-                    <div class="diya-base"></div>
-                    <div class="diya-flame"></div>
-                </div>
-                <div class="diya">
-                    <div class="diya-base"></div>
-                    <div class="diya-flame"></div>
-                </div>
-                <div class="diya">
-                    <div class="diya-base"></div>
-                    <div class="diya-flame"></div>
-                </div>
-                <div class="diya">
-                    <div class="diya-base"></div>
-                    <div class="diya-flame"></div>
-                </div>
-            </div>
-        </section>
-    </div>
-    
     <script>
-        // Remove loader
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.getElementById('divineLoader').classList.add('fade-out');
-            }, 2500);
-        });
-        
-        // Create floating petals
-        function createPetals() {
-            const container = document.getElementById('petalsContainer');
-            const petalCount = 40;
-            
-            for (let i = 0; i < petalCount; i++) {
-                const petal = document.createElement('div');
-                petal.className = 'petal';
-                petal.style.left = Math.random() * 100 + '%';
-                petal.style.animationDuration = (15 + Math.random() * 15) + 's';
-                petal.style.animationDelay = Math.random() * 10 + 's';
-                container.appendChild(petal);
-            }
-            
-            // Add light particles
-            for (let i = 0; i < 30; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'light-particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDuration = (10 + Math.random() * 10) + 's';
-                particle.style.animationDelay = Math.random() * 8 + 's';
-                container.appendChild(particle);
-            }
-        }
-        
-        // Parallax effect
-        window.addEventListener('scroll', function() {
+        // Parallax scrolling effect
+        window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
-            const temple = document.querySelector('.temple-silhouette');
-            const glow = document.querySelector('.divine-glow');
-            const rays = document.querySelector('.divine-rays');
+            const parallaxBg = document.getElementById('parallaxBg');
             
-            if (temple) {
-                temple.style.transform = `translateX(-50%) translateY(${scrolled * 0.3}px)`;
-                temple.style.opacity = 1 - (scrolled / 1000);
-            }
-            
-            if (glow) {
-                glow.style.transform = `translate(-50%, -50%) scale(${1 + scrolled / 2000})`;
-                glow.style.opacity = 0.6 - (scrolled / 1500);
-            }
-            
-            if (rays) {
-                rays.style.opacity = 0.5 - (scrolled / 1200);
+            if (parallaxBg) {
+                parallaxBg.style.transform = `translateX(-50%) translateY(${scrolled * 0.5}px)`;
             }
         });
         
-        // Scroll reveal animations
+        // Intersection Observer for scroll reveals
         const observerOptions = {
             threshold: 0.2,
-            rootMargin: '0px 0px -100px 0px'
+            rootMargin: '0px 0px -50px 0px'
         };
         
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+            entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 200);
                 }
             });
         }, observerOptions);
         
         // Observe elements
-        document.addEventListener('DOMContentLoaded', function() {
-            createPetals();
+        document.addEventListener('DOMContentLoaded', () => {
+            // Observe illustration section
+            const illustrationSection = document.getElementById('illustrationSection');
+            const temple = document.getElementById('temple');
+            const couple = document.getElementById('couple');
             
-            document.querySelectorAll('.section-title, .detail-card, .ornamental-divider, .temple-divider, .closing-content, .diyas-container').forEach(el => {
+            if (illustrationSection) {
+                observer.observe(illustrationSection);
+            }
+            if (temple) {
+                observer.observe(temple);
+            }
+            if (couple) {
+                observer.observe(couple);
+            }
+            
+            // Observe detail cards
+            document.querySelectorAll('[data-reveal]').forEach(el => {
                 observer.observe(el);
             });
+            
+            // Create floating petals
+            createPetals();
         });
         
-        // Smooth scroll
-        document.querySelector('.scroll-indicator')?.addEventListener('click', function() {
-            document.querySelector('.details-section')?.scrollIntoView({
-                behavior: 'smooth'
+        // Create floating petals
+        function createPetals() {
+            const container = document.getElementById('petals');
+            const petalCount = 20;
+            
+            for (let i = 0; i < petalCount; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                petal.style.left = Math.random() * 100 + '%';
+                petal.style.animationDuration = (15 + Math.random() * 10) + 's';
+                petal.style.animationDelay = Math.random() * 10 + 's';
+                container.appendChild(petal);
+            }
+        }
+        
+        // Add smooth easing to scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
     </script>
